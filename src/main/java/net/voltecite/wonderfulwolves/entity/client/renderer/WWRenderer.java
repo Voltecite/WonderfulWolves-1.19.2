@@ -1,26 +1,27 @@
-package net.voltecite.wonderfulwolves.entity.client;
+package net.voltecite.wonderfulwolves.entity.client.renderer;
 
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.WolfModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.WolfCollarLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.Wolf;
+
+import net.voltecite.wonderfulwolves.WonderfulWolves;
+import net.voltecite.wonderfulwolves.entity.client.collarlayer.WWolfCollarLayer;
+import net.voltecite.wonderfulwolves.entity.client.model.WWolfModel;
 import net.voltecite.wonderfulwolves.entity.custom.WWolves;
 
 
-public class WWRenderer extends MobRenderer<WWolves, WolfModel<WWolves>> {
-    private static final ResourceLocation WOLF_LOCATION = new ResourceLocation("textures/entity/wolf/wolf.png");
-    private static final ResourceLocation WOLF_TAME_LOCATION = new ResourceLocation("textures/entity/wolf/wolf_tame.png");
-    private static final ResourceLocation WOLF_ANGRY_LOCATION = new ResourceLocation("textures/entity/wolf/wolf_angry.png");
+public class WWRenderer extends MobRenderer<WWolves, WWolfModel<WWolves>> {
+    private static final ResourceLocation WOLF_LOCATION = new ResourceLocation(WonderfulWolves.MOD_ID,"textures/entity/wonderfulwolves/husky/husky.png");
+    private static final ResourceLocation WOLF_TAME_LOCATION = new ResourceLocation(WonderfulWolves.MOD_ID,"textures/entity/wonderfulwolves/husky/husky_tame.png");
+    private static final ResourceLocation WOLF_ANGRY_LOCATION = new ResourceLocation(WonderfulWolves.MOD_ID,"textures/entity/wonderfulwolves/husky/husky_angry.png");
 
     public WWRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx, new WolfModel<>(ctx.bakeLayer(ModelLayers.WOLF)), 0.5F);
-        //this.addLayer(new WolfCollarLayer(this));
+        super(ctx, new WWolfModel<>(ctx.bakeLayer(ModelLayers.WOLF)), 0.5F);
+        this.addLayer(new WWolfCollarLayer(this));
     }
 
     /**

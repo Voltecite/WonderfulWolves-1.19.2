@@ -21,6 +21,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(WWEntityTypes.DOGGO,0x948e8d, 0x3b3635,
                     new Item.Properties().tab(ModCreativeModeTab.WONDERFUL_WOLVES)));
 
+    public static final RegistryObject<Item> GERMAN_SHEPHERD_SPAWN_EGG = ITEMS.register("german_shepherd_spawn_egg",
+            () -> new ForgeSpawnEggItem(WWEntityTypes.GERMAN_SHEPHERD,0xD7B161, 0x0E1119,
+                    new Item.Properties().tab(ModCreativeModeTab.WONDERFUL_WOLVES)));
+
 
 
     public static void register(IEventBus eventBus) {

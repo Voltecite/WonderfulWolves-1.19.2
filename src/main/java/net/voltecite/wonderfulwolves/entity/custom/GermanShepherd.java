@@ -2,7 +2,8 @@ package net.voltecite.wonderfulwolves.entity.custom;
 
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Animal;
@@ -12,16 +13,16 @@ import net.voltecite.wonderfulwolves.entity.WWEntityTypes;
 
 import javax.annotation.Nullable;
 
-public class WWolves extends Wolf {
+public class GermanShepherd extends Wolf {
 
-    public WWolves(EntityType<? extends Wolf> pEntityType, Level pLevel) {
+    public GermanShepherd(EntityType<? extends Wolf> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     @Nullable
     @Override
     public Wolf getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return WWEntityTypes.DOGGO.get().create(pLevel);
+        return WWEntityTypes.GERMAN_SHEPHERD.get().create(pLevel);
     }
 
     public static AttributeSupplier setAttributes() {
