@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Voltecite/WonderfulWolves-1.19.2/">
-    <img src="logo.png" alt="Logo">
+    <img src="images/logo.png" alt="Logo">
   </a>
 
 <h3 align="center">WonderfulWolves-1.19.2</h3>
